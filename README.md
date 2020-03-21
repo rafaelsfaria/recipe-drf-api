@@ -13,8 +13,8 @@ Create, Read, Update and Delete Ingredients and Recipes.
 ## Start
 ```sh
 docker-compose up -d
-docker-compose run sh -c "python manage.py makemigrations"
-docker-compose run sh -c "python manage.py test && python manage.py flake8"
+docker-compose run app sh -c "python manage.py makemigrations"
+docker-compose run app sh -c "python manage.py test && flake8"
 ```
 Go to 'localhost:8000/api/user/create' and create a new user. Get the token from the json response.
 Modify the header of your requests with the header 'Authorization':
@@ -66,5 +66,5 @@ Django admin.
 If you want to create a super user and access '/admin', run the script:
 
 ```sh
-docker-compose sh -c "python manage.py createsuperuser"
+docker-compose run app sh -c "python manage.py createsuperuser"
 ```
